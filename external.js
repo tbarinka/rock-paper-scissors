@@ -17,27 +17,28 @@ function computerPlay() {
     //return string declaring winner ("You Lose! Paper beats rock!" etc)
 
 function playRound(playerSelection, computerSelection) {
-    //render parameters case insensitive//
+    let playerSelectionLowerCase = playerSelection.toLowerCase();
+    let computerSelectionLowerCase = computerSelection.toLowerCase();
     
-    if ((playerSelection = "rock") && (computerSelection = "paper")) {
+    if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "paper")) {
         return "You lose! Paper beats rock!"
-    } else if ((playerSelection = "rock") && (computerSelection = "rock")) {
+    } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "rock")) {
         return "A draw! Try again!"
-    } else if ((playerSelection = "rock") && (computerSelection = "scissors")) {
+    } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "scissors")) {
         return "You win! Rock beats Scissors!"
-    } else if ((playerSelection = "paper") && (computerSelection = "paper")) {
+    } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "paper")) {
         return "A draw! Try again!"
-    } else if ((playerSelection = "paper") && (computerSelection = "rock")) {
+    } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "rock")) {
         return "You win! Paper beats rock!"
-    } else if ((playerSelection = "paper") && (computerSelection = "scissors")) {
+    } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "scissors")) {
         return "You lose! Scissors beat paper!"
-    } else if ((playerSelection = "scissors") && (computerSelection = "paper")) {
+    } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "paper")) {
         return "You win! Scissors beat paper!"
-    } else if ((playerSelection = "scissors") && (computerSelection = "rock")) {
+    } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "rock")) {
         return "You lose! Rock beats scissors!"
-    } else if ((playerSelection = "scissors") && (computerSelection = "scissors")) {
+    } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "scissors")) {
         return "A draw! Try again"
-    }
+    } else {return "Not a valid input! Parameter values must be rock, paper, or scissors."}
 
 }
 
