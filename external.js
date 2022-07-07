@@ -40,18 +40,16 @@ function playRound(playerSelection) {
 
 }
 
-//3. Write a new function called game(). Call the payRound function inside of game()
-    //to play a 5 round game that keeps score and reports a winner or loser at the end.
-    //Hint: loops can help make the game 5 rounds.//
 
 function game() {
     for (i=0; i<5; i++) {
-        playRound(playerSelection, computerSelection);
-        let playerSelection = prompt();
-        let computerSelection = prompt();
+        playRound(prompt());
     }
 }
 
+//3. Write a new function called game(). Call the payRound function inside of game()
+    //to play a 5 round game that keeps score and reports a winner or loser at the end.
+    //Hint: loops can help make the game 5 rounds.//
 
 
 
