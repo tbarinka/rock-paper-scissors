@@ -1,5 +1,8 @@
 //1. Begin with a function ComputerPlay that randomly returns one of Rock, Paper, or Scissors//
-
+//2. Write a function that plays a single round of rock paper scissors
+    //two parameters: playerSelection and computerSelection
+    //make playerSelection case-insensiive
+    //return string declaring winner ("You Lose! Paper beats rock!" etc)
 function computerPlay() {
     let r = (Math.random()*100)
     if (r <=32) {
@@ -11,21 +14,16 @@ function computerPlay() {
     }
 }
 
-//2. Write a function that plays a single round of rock paper scissors
-    //two parameters: playerSelection and computerSelection
-    //make playerSelection case-insensiive
-    //return string declaring winner ("You Lose! Paper beats rock!" etc)
-
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
     let playerSelectionLowerCase = playerSelection.toLowerCase();
-    let computerSelectionLowerCase = computerSelection.toLowerCase();
+    let computerSelectionLowerCase = computerPlay().toLowerCase();
     
     if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "paper")) {
-        return "You lose! Paper beats rock!"
+        return "You lose! Paper beats rock!";
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "rock")) {
-        return "A draw! Try again!"
+        return "A draw! Try again!";
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "scissors")) {
-        return "You win! Rock beats Scissors!"
+        return "You win! Rock beats Scissors!";
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "paper")) {
         return "A draw! Try again!"
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "rock")) {
@@ -47,7 +45,11 @@ function playRound(playerSelection, computerSelection) {
     //Hint: loops can help make the game 5 rounds.//
 
 function game() {
-    
+    for (i=0; i<5; i++) {
+        playRound(playerSelection, computerSelection);
+        let playerSelection = prompt();
+        let computerSelection = prompt();
+    }
 }
 
 
