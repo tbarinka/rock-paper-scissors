@@ -14,8 +14,8 @@ function computerPlay() {
     }
 }
 
-function playRound(playerSelection) {
-    let playerSelectionLowerCase = playerSelection.toLowerCase();
+function playRound() {
+    let playerSelectionLowerCase = prompt().toLowerCase();
     let computerSelectionLowerCase = computerPlay().toLowerCase();
     
     if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "paper")) {
@@ -40,10 +40,9 @@ function playRound(playerSelection) {
 
 }
 
-
 function game() {
     for (i=0; i<5; i++) {
-        playRound(prompt());
+        console.log(playRound());
     }
 }
 
