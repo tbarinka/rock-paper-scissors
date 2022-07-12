@@ -1,8 +1,27 @@
-//1. Begin with a function ComputerPlay that randomly returns one of Rock, Paper, or Scissors//
-//2. Write a function that plays a single round of rock paper scissors
-    //two parameters: playerSelection and computerSelection
-    //make playerSelection case-insensiive
-    //return string declaring winner ("You Lose! Paper beats rock!" etc)
+
+//ensures eventListener access fully loaded DOM
+window.onload=function() {
+    //button variables
+    var rock = document.querySelector('#rock');
+    var paper = document.querySelector('#paper');
+    var scissors = document.querySelector('#scissors');
+    
+    //button event listeners
+    rock.addEventListener('click', ()=>  {
+        playRound('rock');
+    });
+    paper.addEventListener('click', ()=>  {
+       playRound('paper');
+    });
+    scissors.addEventListener('click', ()=>  {
+        playRound('scissor');
+    });
+}
+
+
+
+
+
 function computerPlay() {
     let r = (Math.random()*100)
     if (r <=32) {
@@ -14,37 +33,44 @@ function computerPlay() {
     }
 }
 
-function playRound() {
-    let playerSelectionLowerCase = prompt().toLowerCase();
+function playRound(variable) {
+    let playerSelectionLowerCase = variable.toLowerCase();
     let computerSelectionLowerCase = computerPlay().toLowerCase();
     
     if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "paper")) {
-        return "You lose! Paper beats rock!";
+        return  console.log("You lose! Paper beats rock!");
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "rock")) {
-        return "A draw! Try again!";
+        return console.log("A draw! Try again!");
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "scissors")) {
-        return "You win! Rock beats Scissors!";
+        return console.log("You win! Rock beats Scissors!");
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "paper")) {
-        return "A draw! Try again!"
+       return  console.log("A draw! Try again!")
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "rock")) {
-        return "You win! Paper beats rock!"
+        return console.log("You win! Paper beats rock!")
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "scissors")) {
-        return "You lose! Scissors beat paper!"
+        return console.log("You lose! Scissors beat paper!")
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "paper")) {
-        return "You win! Scissors beat paper!"
+        return console.log("You win! Scissors beat paper!")
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "rock")) {
-        return "You lose! Rock beats scissors!"
+        return console.log("You lose! Rock beats scissors!")
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "scissors")) {
-        return "A draw! Try again"
-    } else {return "Not a valid input! Parameter values must be rock, paper, or scissors."}
+        return console.log("A draw! Try again")
+    } else {return console.log("Not a valid input! Parameter values must be rock, paper, or scissors.")}
 
 }
 
-function game() {
-    for (i=0; i<5; i++) {
-        console.log(playRound());
-    }
-}
+
+
+//const paper = document.querySelector('#paper');
+//paper.addEventListener('click', playRound("paper"));
+//const scissors = document.querySelector('#scissors');
+//scissors.addEventListener('click', playRound("scissors"));
+
+//function fiveRoundGame() {
+    //for (i=0; i<5; i++) {
+    //    console.log(playRound());
+    //}
+//}
 
 //3. Write a new function called game(). Call the payRound function inside of game()
     //to play a 5 round game that keeps score and reports a winner or loser at the end.
