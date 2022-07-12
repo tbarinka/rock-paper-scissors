@@ -1,10 +1,13 @@
 
-//ensures eventListener access fully loaded DOM
 window.onload=function() {
+
     //button variables
-    var rock = document.querySelector('#rock');
-    var paper = document.querySelector('#paper');
-    var scissors = document.querySelector('#scissors');
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissors = document.querySelector('#scissors');
+
+    //other variables
+    var results = document.querySelector('#display-results');
     
     //button event listeners
     rock.addEventListener('click', ()=>  {
@@ -14,12 +17,8 @@ window.onload=function() {
        playRound('paper');
     });
     scissors.addEventListener('click', ()=>  {
-        playRound('scissor');
+        playRound('scissors');
     });
-}
-
-
-
 
 
 function computerPlay() {
@@ -38,33 +37,29 @@ function playRound(variable) {
     let computerSelectionLowerCase = computerPlay().toLowerCase();
     
     if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "paper")) {
-        return  console.log("You lose! Paper beats rock!");
+        return results.textContent = "You lose! Paper beats rock!";
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "rock")) {
-        return console.log("A draw! Try again!");
+        return results.textContent = "A draw! Try again!";
     } else if ((playerSelectionLowerCase == "rock") && (computerSelectionLowerCase == "scissors")) {
-        return console.log("You win! Rock beats Scissors!");
+        return results.textContent = "You win! Rock beats Scissors!";
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "paper")) {
-       return  console.log("A draw! Try again!")
+       return  results.textContent = "A draw! Try again!";
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "rock")) {
-        return console.log("You win! Paper beats rock!")
+        return results.textContent = "You win! Paper beats rock!";
     } else if ((playerSelectionLowerCase == "paper") && (computerSelectionLowerCase == "scissors")) {
-        return console.log("You lose! Scissors beat paper!")
+        return results.textContent = "You lose! Scissors beat paper!";
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "paper")) {
-        return console.log("You win! Scissors beat paper!")
+        return results.textContent = "You win! Scissors beat paper!";
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "rock")) {
-        return console.log("You lose! Rock beats scissors!")
+        return results.textContent = "You lose! Rock beats scissors!";
     } else if ((playerSelectionLowerCase == "scissors") && (computerSelectionLowerCase == "scissors")) {
-        return console.log("A draw! Try again")
-    } else {return console.log("Not a valid input! Parameter values must be rock, paper, or scissors.")}
+        return results.textContent = "A draw! Try again.";
+    } else {return results.textContent = "Not a valid input! Parameter values must be rock, paper, or scissors.";}
 
 }
 
 
-
-//const paper = document.querySelector('#paper');
-//paper.addEventListener('click', playRound("paper"));
-//const scissors = document.querySelector('#scissors');
-//scissors.addEventListener('click', playRound("scissors"));
+}
 
 //function fiveRoundGame() {
     //for (i=0; i<5; i++) {
