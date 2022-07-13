@@ -6,6 +6,7 @@ const scissors = document.querySelector('#scissors');
 const results = document.getElementById('round-results');
 const tallyC = document.getElementById('tally-comp');
 const tallyP = document.getElementById('tally-play');
+const bestOf = document.getElementById('bestOf')
 
 let computerScore = 0;
 let playerScore = 0;
@@ -23,16 +24,16 @@ scissors.addEventListener('click', ()=>  {
     playRound('scissors');
 });
 
+//create a function that checks if computer or play has scored 5 & announce winner
 
+function checkScore() {
+    if (computerScore === 5) {
+        bestOf.textContent = "Computer wins first to 5! Reload the page to play again.";
+    } else if (playerScore === 5) {
+        bestOf.textContent = "Player wins first to 5! Reload the page to play again.";
+    }
 
-//Display the running score, and announce a winner of the game once one player reaches 5 points.
-
-//1X. Create a loop that plays five rounds.
-//2X. At the end of each round, print the result using this formula: [element].textContent += "<added text>";
-//3. At the end of five rounds, print the winner. Print "Play again?" vel sim.
-//4. Reset after five turns.
-
-
+}
 
 function computerPlay() {
     let r = (Math.random()*100)
@@ -69,6 +70,7 @@ function playRound(variable) {
         results.textContent = "A draw! Try again.";
     } else {return results.textContent = "Not a valid input! Parameter values must be rock, paper, or scissors.";}
 
+    checkScore();
 
 }
 
